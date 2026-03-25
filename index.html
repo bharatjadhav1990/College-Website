@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shri Bhairavnath Vidya Mandir & Junior College, Pabal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --saffron:    #E8631A;
+      --deep-red:   #8B1A1A;
+      --gold:       #C8960C;
+      --gold-light: #F2C94C;
+      --cream:      #FDF6E3;
+      --dark-brown: #1C0D00;
+      --mid-brown:  #3D1F00;
+      --text:       #2A1200;
+      --white:      #FFFEF8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Crimson Pro', serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: linear-gradient(135deg, var(--dark-brown) 0%, var(--mid-brown) 100%);
+      border-bottom: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 64px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .nav-emblem {
+      width: 44px; height: 44px;
+      background: radial-gradient(circle, var(--gold-light), var(--gold));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 0 12px rgba(200,150,12,0.5);
+      flex-shrink: 0;
+    }
+    .nav-title {
+      font-family: 'Cinzel Decorative', serif;
+      color: var(--gold-light);
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+    .nav-links {
+      display: flex; gap: 0; list-style: none;
+    }
+    .nav-links a {
+      display: block; padding: 0 1.1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; font-weight: 600; letter-spacing: 0.04em;
+      color: var(--cream);
+      text-decoration: none;
+      height: 64px; line-height: 64px;
+      transition: color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 50%; right: 50%;
+      height: 2px; background: var(--gold-light);
+      transition: left 0.25s, right 0.25s;
+    }
+    .nav-links a:hover { color: var(--gold-light); background: rgba(255,255,255,0.04); }
+    .nav-links a:hover::after { left: 0.8rem; right: 0.8rem; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232,99,26,0.18) 0%, transparent 70%),
+        linear-gradient(160deg, var(--dark-brown) 0%, #2D0A00 55%, #1a0800 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 100px 1.5rem 3rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(200,150,12,0.04) 60px, rgba(200,150,12,0.04) 61px),
+        repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(200,150,12,0.04) 60px, rgba(200,150,12,0.04) 61px);
+      pointer-events: none;
+    }
+    .hero-diya {
+      font-size: 4rem; margin-bottom: 0.5rem;
+      animation: glow 2.5s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 6px #E8631A); }
+      to   { filter: drop-shadow(0 0 22px #F2C94C) drop-shadow(0 0 40px #E8631A); }
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      padding: 0.25rem 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      background: rgba(200,150,12,0.08);
+    }
+    .hero h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.6rem, 4.5vw, 3.4rem);
+      color: var(--gold-light);
+      line-height: 1.2;
+      text-shadow: 0 2px 24px rgba(232,99,26,0.4);
+      max-width: 820px;
+      margin-bottom: 0.5rem;
+    }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: rgba(253,246,227,0.7);
+      margin-bottom: 2rem;
+      letter-spacing: 0.04em;
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(0.95rem, 2vw, 1.2rem);
+      color: var(--saffron);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+    .hero-stats {
+      display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.2rem;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.85rem; color: rgba(253,246,227,0.55);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .hero-divider {
+      width: 280px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 2rem;
+    }
+    .hero-cta {
+      display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    }
+    .btn-primary {
+      padding: 0.85rem 2.2rem;
+      background: linear-gradient(135deg, var(--saffron), var(--gold));
+      color: var(--dark-brown);
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.75rem; letter-spacing: 0.1em;
+      border: none; cursor: pointer;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      text-decoration: none;
+      font-weight: 700;
+      transition: filter 0.25s, transform 0.2s;
+      box-shadow: 0 4px 16px rgba(232,99,26,0.35);
+    }
+    .btn-primary:hover { filter: brightness(1.12); transform: translateY(-2px); }
+    .btn-outline {
+      padding: 0.85rem 2.2rem;
+      background: transparent;
+      color: var(--gold-light);
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.75rem; letter-spacing: 0.1em;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      text-decoration: none;
+      transition: background 0.25s, color 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover { background: rgba(200,150,12,0.12); transform: translateY(-2px); }
+
+    /* ─── SCROLL MARQUEE ─── */
+    .marquee-wrap {
+      background: linear-gradient(90deg, var(--deep-red), var(--saffron), var(--deep-red));
+      overflow: hidden; padding: 10px 0;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .marquee-track {
+      display: flex; gap: 4rem; white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-item {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--white); font-size: 0.9rem; letter-spacing: 0.08em;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .marquee-dot { color: var(--gold-light); font-size: 1.2rem; }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 5rem 1.5rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 0.4rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .section-label::before, .section-label::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--saffron));
+    }
+    .section-label::after {
+      background: linear-gradient(90deg, var(--saffron), transparent);
+    }
+    .section-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: var(--dark-brown);
+      text-align: center; margin-bottom: 1rem;
+    }
+    .section-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--mid-brown);
+      text-align: center; margin-bottom: 3rem;
+      max-width: 600px; margin-left: auto; margin-right: auto;
+    }
+
+    /* ─── PRINCIPAL'S DESK ─── */
+    #principal {
+      background: linear-gradient(160deg, var(--dark-brown) 0%, #2D0A00 100%);
+      position: relative; overflow: hidden;
+    }
+    #principal::before {
+      content: '॥';
+      position: absolute; font-size: 22rem;
+      color: rgba(200,150,12,0.04);
+      font-family: 'Cormorant Garamond', serif;
+      right: -2rem; top: -4rem;
+      pointer-events: none;
+      line-height: 1;
+    }
+    #principal .section-title { color: var(--gold-light); }
+    #principal .section-label { color: var(--gold); }
+    #principal .section-label::before { background: linear-gradient(90deg, transparent, var(--gold)); }
+    #principal .section-label::after  { background: linear-gradient(90deg, var(--gold), transparent); }
+    .principal-card {
+      display: grid; grid-template-columns: 280px 1fr; gap: 4rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(200,150,12,0.25);
+      padding: 3rem;
+      position: relative;
+    }
+    .principal-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--saffron), var(--gold), transparent);
+    }
+    .principal-photo-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
+    }
+    .principal-photo {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--mid-brown), var(--dark-brown));
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 30px rgba(200,150,12,0.25), 0 0 0 8px rgba(200,150,12,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+      overflow: hidden;
+    }
+    .principal-name {
+      font-family: 'Cinzel Decorative', serif;
+      color: var(--gold-light);
+      font-size: 1.1rem;
+      text-align: center;
+    }
+    .principal-title-tag {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--saffron);
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .principal-qual {
+      font-size: 0.85rem;
+      color: rgba(253,246,227,0.5);
+      text-align: center;
+      font-style: italic;
+    }
+    .principal-msg { color: var(--cream); }
+    .principal-msg .quote-mark {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 5rem;
+      color: var(--gold);
+      line-height: 0.6;
+      display: block;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+    .principal-msg h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+    .principal-msg p {
+      font-size: 1.08rem;
+      line-height: 1.85;
+      color: rgba(253,246,227,0.82);
+      margin-bottom: 1rem;
+    }
+    .principal-sig {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(200,150,12,0.3);
+      display: flex; align-items: center; gap: 1.2rem;
+    }
+    .sig-line { flex: 1; height: 1px; background: rgba(200,150,12,0.2); }
+    .sig-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      align-items: center;
+    }
+    .about-text p {
+      font-size: 1.1rem; line-height: 1.9; color: var(--mid-brown);
+      margin-bottom: 1rem;
+    }
+    .about-highlights {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+    }
+    .highlight-card {
+      border: 1px solid rgba(200,150,12,0.3);
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(232,99,26,0.04), rgba(200,150,12,0.06));
+      position: relative; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .highlight-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
+      background: linear-gradient(180deg, var(--saffron), var(--gold));
+    }
+    .highlight-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(200,150,12,0.15); }
+    .highlight-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .highlight-card h4 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.7rem;
+      color: var(--dark-brown); margin-bottom: 0.4rem;
+    }
+    .highlight-card p { font-size: 0.9rem; color: var(--mid-brown); line-height: 1.5; }
+
+    /* ─── ACADEMICS ─── */
+    #academics { background: var(--cream); }
+    .academics-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+    }
+    .stream-card {
+      background: var(--dark-brown);
+      border: 1px solid rgba(200,150,12,0.25);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+      cursor: default;
+    }
+    .stream-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--saffron), var(--gold));
+      transform: scaleX(0);
+      transition: transform 0.35s;
+    }
+    .stream-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+    .stream-card:hover::after { transform: scaleX(1); }
+    .stream-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .stream-card h3 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.8rem; color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .stream-card p { font-size: 0.9rem; color: rgba(253,246,227,0.65); line-height: 1.5; }
+    .stream-badge {
+      display: inline-block; margin-top: 1rem;
+      padding: 0.2rem 0.8rem;
+      border: 1px solid var(--saffron);
+      color: var(--saffron);
+      font-size: 0.72rem; letter-spacing: 0.1em;
+    }
+
+    /* ─── FACILITIES ─── */
+    #facilities { background: var(--white); }
+    .fac-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem;
+    }
+    .fac-item {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 2rem 1rem;
+      background: var(--cream);
+      border: 1px solid rgba(200,150,12,0.2);
+      text-align: center;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .fac-item:hover { background: var(--dark-brown); transform: translateY(-4px); }
+    .fac-item:hover .fac-name { color: var(--gold-light); }
+    .fac-item:hover .fac-desc { color: rgba(253,246,227,0.6); }
+    .fac-emoji { font-size: 2.2rem; margin-bottom: 0.7rem; }
+    .fac-name {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.65rem; color: var(--dark-brown);
+      margin-bottom: 0.3rem;
+      transition: color 0.3s;
+    }
+    .fac-desc { font-size: 0.82rem; color: var(--mid-brown); line-height: 1.4; transition: color 0.3s; }
+
+    /* ─── ACHIEVEMENTS ─── */
+    #achievements {
+      background: linear-gradient(135deg, var(--dark-brown) 0%, var(--mid-brown) 100%);
+    }
+    #achievements .section-title { color: var(--gold-light); }
+    #achievements .section-label { color: var(--gold); }
+    #achievements .section-label::before { background: linear-gradient(90deg, transparent, var(--gold)); }
+    #achievements .section-label::after  { background: linear-gradient(90deg, var(--gold), transparent); }
+    #achievements .section-sub { color: rgba(253,246,227,0.6); }
+    .ach-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;
+    }
+    .ach-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,150,12,0.2);
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .ach-card::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 40px; height: 2px;
+      background: linear-gradient(90deg, var(--saffron), var(--gold));
+    }
+    .ach-num {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.6rem;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .ach-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: rgba(253,246,227,0.7);
+      font-style: italic;
+    }
+
+    /* ─── NOTICES ─── */
+    #notices { background: var(--cream); }
+    .notices-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    }
+    .notice-box {
+      border: 1px solid rgba(200,150,12,0.3);
+      overflow: hidden;
+    }
+    .notice-header {
+      background: linear-gradient(135deg, var(--dark-brown), var(--mid-brown));
+      padding: 1rem 1.5rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .notice-header span {
+      font-family: 'Cinzel Decorative', serif;
+      color: var(--gold-light); font-size: 0.7rem;
+    }
+    .notice-list { list-style: none; }
+    .notice-list li {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(200,150,12,0.12);
+      display: flex; gap: 1rem; align-items: flex-start;
+      transition: background 0.2s;
+    }
+    .notice-list li:hover { background: rgba(200,150,12,0.05); }
+    .notice-date {
+      background: var(--dark-brown);
+      color: var(--gold-light);
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.6rem;
+      padding: 0.2rem 0.5rem;
+      text-align: center; min-width: 48px;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+    .notice-text { font-size: 0.95rem; color: var(--mid-brown); line-height: 1.5; }
+    .notice-new {
+      display: inline-block; margin-left: 0.4rem;
+      background: var(--deep-red); color: #fff;
+      font-size: 0.65rem; padding: 0.1rem 0.4rem;
+      vertical-align: middle;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: linear-gradient(160deg, var(--dark-brown) 0%, #1a0600 100%);
+    }
+    #contact .section-title { color: var(--gold-light); }
+    #contact .section-label { color: var(--gold); }
+    #contact .section-label::before { background: linear-gradient(90deg, transparent, var(--gold)); }
+    #contact .section-label::after  { background: linear-gradient(90deg, var(--gold), transparent); }
+    .contact-wrap {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    }
+    .contact-info { color: var(--cream); }
+    .contact-info h3 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1rem; color: var(--gold-light);
+      margin-bottom: 2rem;
+    }
+    .contact-row {
+      display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start;
+    }
+    .contact-icon {
+      width: 36px; height: 36px;
+      background: rgba(200,150,12,0.15);
+      border: 1px solid rgba(200,150,12,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .contact-row-text p { font-size: 0.9rem; color: rgba(253,246,227,0.55); }
+    .contact-row-text strong { color: var(--cream); font-size: 1rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(200,150,12,0.25);
+      padding: 0.8rem 1rem;
+      color: var(--cream);
+      font-family: 'Crimson Pro', serif; font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0D0400;
+      border-top: 2px solid rgba(200,150,12,0.25);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    .footer-inner { max-width: 700px; margin: 0 auto; }
+    .footer-logo {
+      font-family: 'Cinzel Decorative', serif;
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+    .footer-mantra {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--saffron);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(253,246,227,0.3);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── DECORATIVE DIVIDER ─── */
+    .ornament {
+      text-align: center; font-size: 1.4rem; color: var(--gold);
+      margin: 0 0 2rem;
+      letter-spacing: 0.8rem;
+      opacity: 0.6;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .principal-card { grid-template-columns: 1fr; gap: 2rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .notices-grid { grid-template-columns: 1fr; }
+      .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stats { gap: 2rem; }
+    }
+
+    /* ─── FADE-IN ANIMATION ─── */
+    .fade-in {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-emblem"><img src="sarswati.jpg" heigth="50" width="50"></div>
+    <div class="nav-title">
+      Shri Bhairavnath<br>Vidya Mandir & Jr. College
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#principal">Principal's Desk</a></li>
+    <li><a href="#academics">Academics</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#notices">Notices</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-diya">🪔</div>
+  <div class="hero-badge">Est. Since 1956 · Pabal, Pune District</div>
+  <h1>Shri Bhairavnath Vidya Mandir</h1>
+  <div class="hero-sub">& Junior College, Pabal</div>
+  <div class="hero-tagline">ज्ञानं परमं ध्येयम् — Knowledge is the Highest Goal</div>
+  <div class="hero-divider"></div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">38+</div><div class="stat-label">Years of Excellence</div></div>
+    <div class="stat"><div class="stat-num">2500+</div><div class="stat-label">Alumni Strong</div></div>
+    <div class="stat"><div class="stat-num">95%</div><div class="stat-label">Board Pass Rate</div></div>
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Dedicated Faculty</div></div>
+  </div>
+  <div class="hero-cta">
+    <a href="#about" class="btn-primary">Explore Our School</a>
+    <a href="#contact" class="btn-outline">Get In Touch</a>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="marquee-dot">✦</span> Admissions Open 2025–26 — Class 8 to 12</span>
+    <span class="marquee-item"><span class="marquee-dot">✦</span> Board Exam Preparation Batches Now Starting</span>
+    <span class="marquee-item"><span class="marquee-dot">✦</span> Annual Sports Day — March 2025</span>
+    <span class="marquee-item"><span class="marquee-dot">✦</span> Science Exhibition Winners — District Level Champions</span>
+    <span class="marquee-item"><span class="marquee-dot">✦</span> Parent–Teacher Meeting — Last Saturday of Every Month</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item"><span class="marquee-dot">✦</span> Admissions Open 2025–26 — Class 8 to 12</span>
+    <span class="marquee-item"><span class="marquee-dot">✦</span> Board Exam Preparation Batches Now Starting</span>
+    <span class="marquee-item"><span class="marquee-dot">✦</span> Annual Sports Day — March 2025</span>
+    <span class="marquee-item"><span class="marquee-dot">✦</span> Science Exhibition Winners — District Level Champions</span>
+    <span class="marquee-item"><span class="marquee-dot">✦</span> Parent–Teacher Meeting — Last Saturday of Every Month</span>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title">About Our Institution</h2>
+    <p class="section-sub">Rooted in tradition, growing with the future</p>
+    <div class="ornament">✦ ॐ ✦</div>
+    <div class="about-grid fade-in">
+      <div class="about-text">
+        <p>Shri Bhairavnath Vidya Mandir and Junior College, Pabal is a premier educational institution nestled in the heart of Shirur Taluka, Pune District, Maharashtra. Founded under the divine blessings of Shri Bhairavnath, our institution has been a beacon of knowledge and character formation for the youth of this region for over three decades.</p>
+        <p>We offer a holistic education system that blends the rich cultural heritage of Maharashtra with modern pedagogical methods. Our school caters to students from Class 8 through 10 (SSC Board), while our Junior College offers Science, Arts and Commerce streams for Classes 11 and 12 (HSC Board).</p>
+        <p>Our vision is to nurture not just academically bright students but well-rounded individuals who are grounded in values, compassionate to society, and ready to face the challenges of a dynamic world.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card fade-in">
+          <div class="highlight-icon">🎓</div>
+          <h4>Academic Excellence</h4>
+          <p>Consistent top results in SSC & HSC Board examinations with many district rank holders.</p>
+        </div>
+        <div class="highlight-card fade-in">
+          <div class="highlight-icon">🌿</div>
+          <h4>Value Education</h4>
+          <p>Deep-rooted value system inspired by Indian ethos, yoga, and cultural programs.</p>
+        </div>
+        <div class="highlight-card fade-in">
+          <div class="highlight-icon">🏆</div>
+          <h4>Co-Curricular</h4>
+          <p>State & district-level accolades in sports, debate, arts, and science competitions.</p>
+        </div>
+        <div class="highlight-card fade-in">
+          <div class="highlight-icon">🤝</div>
+          <h4>Community Connect</h4>
+          <p>Active outreach programs, rural development initiatives, and social responsibility drives.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRINCIPAL'S DESK ═══ -->
+<section id="principal">
+  <div class="section-inner">
+    <div class="section-label">Leadership</div>
+    <h2 class="section-title">Principal's Desk</h2>
+    <p class="section-sub" style="color:rgba(253,246,227,0.55)">A message from the heart of our institution</p>
+    <div class="ornament" style="color:var(--gold)">✦ ॐ ✦</div>
+    <div class="principal-card fade-in">
+      <div class="principal-photo-wrap">
+        <div class="principal-photo"><img src="principal.jpeg" heigth="175" width="175"></div>
+        <div class="principal-name">Principal</div>
+        <div class="principal-title-tag">Shri Bhairavnath Vidya Mandir</div>
+        <div class="principal-qual">B.Sc.,M.A., B.Ed.,</div>
+        <div style="margin-top:1.5rem; text-align:center;">
+          <div style="font-size:0.75rem; color:rgba(253,246,227,0.4); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.5rem;">Experience</div>
+          <div style="font-family:'Cinzel Decorative',serif; font-size:1.4rem; color:var(--gold-light);">25+</div>
+          <div style="font-size:0.75rem; color:rgba(253,246,227,0.4);">Years in Education</div>
+        </div>
+      </div>
+      <div class="principal-msg">
+        <span class="quote-mark">"</span>
+        <h3>Dear Students, Parents & Well-Wishers,</h3>
+        <p>It is my privilege and honour to serve as the Principal of Shri Bhairavnath Vidya Mandir and Junior College, Pabal — an institution that has, for decades, been a torchbearer of quality education and noble values in our beloved Shirur Taluka.</p>
+        <p>Education, to us, is not merely the acquisition of knowledge from textbooks. It is the cultivation of a curious, compassionate, and courageous mind — a mind that can think critically, dream boldly, and act responsibly. At this Vidya Mandir, we believe every child carries within them an infinite potential waiting to be discovered and nurtured.</p>
+        <p>Our dedicated faculty works tirelessly to create a learning environment that is safe, stimulating, and deeply rooted in our cultural identity. We encourage every student to pursue excellence not just in academics, but in sports, arts, and community service — for these are the true hallmarks of a complete human being.</p>
+        <p>To the parents who have entrusted your children to us: your faith is our greatest responsibility and our deepest inspiration. Together, let us build a future that makes Pabal proud.</p>
+        <div class="principal-sig">
+          <div class="sig-line"></div>
+          <div class="sig-text">— With Warm Regards & Blessings</div>
+          <div class="sig-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACADEMICS ═══ -->
+<section id="academics">
+  <div class="section-inner">
+    <div class="section-label">Learning Pathways</div>
+    <h2 class="section-title">Academic Programmes</h2>
+    <p class="section-sub">Structured learning from secondary to higher secondary</p>
+    <div class="academics-grid fade-in">
+      <div class="stream-card">
+        <div class="stream-icon">📘</div>
+        <h3>Secondary School (SSC)</h3>
+        <p>Classes 8, 9 & 10 following the Maharashtra State Board (SSC) curriculum with emphasis on conceptual clarity and examination excellence.</p>
+        <span class="stream-badge">Class 8 – 10</span>
+      </div>
+      <div class="stream-card">
+        <div class="stream-icon">🔬</div>
+        <h3>Science Stream (HSC)</h3>
+        <p>Physics, Chemistry, Biology & Mathematics with practical lab sessions, JEE/NEET orientation, and guidance for competitive examinations.</p>
+        <span class="stream-badge">Class 11 – 12</span>
+      </div>
+      <div class="stream-card">
+        <div class="stream-icon">📊</div>
+        <h3>Commerce Stream (HSC)</h3>
+        <p>Accountancy, Economics, Business Studies, and Secretarial Practice with a focus on entrepreneurship and financial literacy.</p>
+        <span class="stream-badge">Class 11 – 12</span>
+      </div>
+      <div class="stream-card">
+        <div class="stream-icon">🎨</div>
+        <h3>Arts Stream (HSC)</h3>
+        <p>History, Geography, Political Science, Sociology, and Marathi/English Literature — cultivating critical thinkers and civil service aspirants.</p>
+        <span class="stream-badge">Class 11 – 12</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FACILITIES ═══ -->
+<section id="facilities">
+  <div class="section-inner">
+    <div class="section-label">Infrastructure</div>
+    <h2 class="section-title">Our Facilities</h2>
+    <p class="section-sub">A campus built for holistic development</p>
+    <div class="fac-grid fade-in">
+      <div class="fac-item">
+        <div class="fac-emoji">🖥️</div>
+        <div class="fac-name">Computer Lab</div>
+        <div class="fac-desc">40-node computer lab with high-speed internet connectivity</div>
+      </div>
+      <div class="fac-item">
+        <div class="fac-emoji">🔭</div>
+        <div class="fac-name">Science Labs</div>
+        <div class="fac-desc">Fully equipped Physics, Chemistry & Biology laboratories</div>
+      </div>
+      <div class="fac-item">
+        <div class="fac-emoji">📚</div>
+        <div class="fac-name">Library</div>
+        <div class="fac-desc">5000+ books, periodicals & digital resources available</div>
+      </div>
+      <div class="fac-item">
+        <div class="fac-emoji">🏟️</div>
+        <div class="fac-name">Sports Ground</div>
+        <div class="fac-desc">Spacious ground for cricket, kabaddi, football & athletics</div>
+      </div>
+      <div class="fac-item">
+        <div class="fac-emoji">🏛️</div>
+        <div class="fac-name">Assembly Hall</div>
+        <div class="fac-desc">Large multipurpose auditorium for events and cultural programs</div>
+      </div>
+      <div class="fac-item">
+        <div class="fac-emoji">🍽️</div>
+        <div class="fac-name">Mid-Day Meal</div>
+        <div class="fac-desc">Hygienic and nutritious meal program for all students</div>
+      </div>
+      <div class="fac-item">
+        <div class="fac-emoji">🚌</div>
+        <div class="fac-name">Transport</div>
+        <div class="fac-desc">Bus facility for students from surrounding villages</div>
+      </div>
+      <div class="fac-item">
+        <div class="fac-emoji">🧘</div>
+        <div class="fac-name">Yoga & Meditation</div>
+        <div class="fac-desc">Daily yoga sessions promoting mental and physical wellbeing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACHIEVEMENTS ═══ -->
+<section id="achievements">
+  <div class="section-inner">
+    <div class="section-label">Our Pride</div>
+    <h2 class="section-title">Achievements & Honours</h2>
+    <p class="section-sub">Years of dedication reflected in our milestones</p>
+    <div class="ach-grid fade-in">
+      <div class="ach-card">
+        <div class="ach-num">38+</div>
+        <div class="ach-label">Years of Service to Education</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-num">2500+</div>
+        <div class="ach-label">Successful Alumni Across India</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-num">95%</div>
+        <div class="ach-label">Board Examination Pass Rate</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-num">12+</div>
+        <div class="ach-label">District Rank Holders This Year</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-num">08</div>
+        <div class="ach-label">State Level Sports Medals</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-num">15+</div>
+        <div class="ach-label">Cultural Competition Awards</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NOTICES ═══ -->
+<section id="notices">
+  <div class="section-inner">
+    <div class="section-label">Updates</div>
+    <h2 class="section-title">Notices & Announcements</h2>
+    <p class="section-sub">Stay informed with the latest from our school</p>
+    <div class="notices-grid fade-in">
+      <div class="notice-box">
+        <div class="notice-header">
+          <span>📋 School Notices</span>
+        </div>
+        <ul class="notice-list">
+          <li>
+            <div class="notice-date">MAR<br>25</div>
+            <div class="notice-text">Admissions open for Class 8 and 11 (2025–26). Apply before 30 April. <span class="notice-new">NEW</span></div>
+          </li>
+          <li>
+            <div class="notice-date">MAR<br>20</div>
+            <div class="notice-text">Annual Prize Distribution ceremony scheduled on 5th April at 10:00 AM in School Hall.</div>
+          </li>
+          <li>
+            <div class="notice-date">MAR<br>15</div>
+            <div class="notice-text">Half-yearly examination time table for Class 9 and 10 has been released.</div>
+          </li>
+          <li>
+            <div class="notice-date">MAR<br>10</div>
+            <div class="notice-text">Parent–Teacher Meeting for Classes 11 & 12 — Saturday, 29th March at 10 AM.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="notice-box">
+        <div class="notice-header">
+          <span>🏆 Events & Activities</span>
+        </div>
+        <ul class="notice-list">
+          <li>
+            <div class="notice-date">APR<br>05</div>
+            <div class="notice-text">Inter-school Science Exhibition at Pabal Campus. Registration open now. <span class="notice-new">NEW</span></div>
+          </li>
+          <li>
+            <div class="notice-date">MAR<br>28</div>
+            <div class="notice-text">Annual Sports Day 2025 — track events, kabaddi, and kho-kho competitions. All students participate.</div>
+          </li>
+          <li>
+            <div class="notice-date">MAR<br>22</div>
+            <div class="notice-text">Elocution & Debate competition for Classes 9–12. Topic: Role of Youth in Nation Building.</div>
+          </li>
+          <li>
+            <div class="notice-date">MAR<br>18</div>
+            <div class="notice-text">Career Guidance Seminar for Class 12 students by alumni in engineering and medical fields.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Reach Us</div>
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-sub" style="color:rgba(253,246,227,0.5)">We'd love to hear from parents, students & well-wishers</p>
+    <div class="contact-wrap fade-in">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div class="contact-row-text">
+            <strong>Shri Bhairavnath Vidya Mandir & Jr. College</strong>
+            <p>Pabal, Shirur Taluka, Pune District<br>Maharashtra — 412403</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <div class="contact-row-text">
+            <strong>+91 (02138) XXXXXX</strong>
+            <p>Mon – Sat, 8:00 AM to 4:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-row-text">
+            <strong>info@bhairavnathvidyamandir.edu.in</strong>
+            <p>We respond within 1–2 working days</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-row-text">
+            <strong>School Hours</strong>
+            <p>Monday – Saturday: 7:30 AM – 5:15 PM</p>
+          </div>
+        </div>
+        <div style="margin-top:2rem; padding:1.5rem; border:1px solid rgba(200,150,12,0.25); background:rgba(255,255,255,0.03);">
+          <div style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gold-light); font-size:1.1rem; margin-bottom:0.5rem;">॥ विद्या विनय सम्पन्ने ॥</div>
+          <div style="font-size:0.85rem; color:rgba(253,246,227,0.5);">Knowledge with humility — our guiding motto</div>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="handleForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Full Name" required />
+            </div>
+            <div class="form-group">
+              <label>Mobile Number</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="type your email@gmail.com" />
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="Admission / Enquiry / General" required />
+          </div>
+          <div class="form-group">
+            <label>Your Message</label>
+            <textarea placeholder="Write your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="align-self:flex-start; border:none; font-size:0.75rem;">
+            Send Message ✦
+          </button>
+          <div id="form-success" style="display:none; color:var(--gold-light); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem;">
+            ✓ Thank you! Your message has been received. We will respond shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div style="font-size:2rem; margin-bottom:0.5rem;">🕉</div>
+    <div class="footer-logo">Shri Bhairavnath Vidya Mandir & Junior College</div>
+    <div class="footer-mantra">Pabal, Shirur Taluka, Pune, Maharashtra</div>
+    <div style="width:120px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:1rem auto;"></div>
+    <div class="footer-copy">© 2025 Shri Bhairavnath Vidya Mandir & Junior College, Pabal. All Rights Reserved.<br>Designed with 🙏 in Maharashtra</div>
+  </div>
+</footer>
+
+<script>
+  // ── Scroll-triggered fade-in ──
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── Active nav link ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold-light)' : '';
+    });
+  });
+
+  // ── Contact form ──
+  function handleForm(e) {
+    e.preventDefault();
+    document.getElementById('form-success').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => { document.getElementById('form-success').style.display = 'none'; }, 5000);
+  }
+</script>
+</body>
+</html>
